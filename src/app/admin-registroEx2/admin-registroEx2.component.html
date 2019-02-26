@@ -1,29 +1,5 @@
 <div class="inicio-background">
-    <div>
-      <div class="bar">
-  <div class="dropdown">
-  <button class="dropbtn">
-    <div class="btn"></div>
-    <div class="btn"></div>
-    <div class="btn"></div>
-  </button>
-  
-  <div class="adminmenu">
-    <a routerLink="/aControlB" >Control de bicicletas</a>
-    <a routerLink="/aRegE1">Registro extemporáneo</a>
-    <a routerLink="/aRegV">Registro de vigilantes</a>
-    <a routerLink="/aAccesos">Control de accesos</a>
-    <a routerLink="/aExp">Exportar datos</a>
-  
-  </div>
-  
-  </div>
-  <h3>Registro Extemporáneo</h3>
-  </div>
-        
-            
-            
-  </div>
+  <app-menu-component></app-menu-component>
   <br>
   <form class="formulario">
     Marca:<br>
@@ -35,10 +11,10 @@
        </select>
         <br><br>
     Color:<br>
-    <input type="text" name="Color" > 
+    <input type="text" name="Color" >
     <br>
     Numero de Serie:<br>
-    <input type="text" name="NSerie" > 
+    <input type="text" name="NSerie" >
     <br>
     Matricula del Dueño:<br>
     <input type="text" name="MatDueño"><br>

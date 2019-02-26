@@ -15,6 +15,7 @@ import { RecuperarContr } from './recuperar-contr/recuperar-contr.component';
 import { RecuperarContr2 } from './recuperar-contr2/recuperar-contr2.component';
 import { InicioR } from './inicio-reg/inicio-reg.component';
 import { Intro } from './intro/intro.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { Intro } from './intro/intro.component';
     RecuperarContr,
     RecuperarContr2,
     InicioR,
-    Intro
+    Intro,
+    MenuComponent
 
   ],
   imports: [
