@@ -7,7 +7,30 @@
     color: #003B5C;
     text-align: center;
   }
-  
+  .imagenp{
+    height: 200px;
+    width: 200px;
+    border-radius:150px;
+    border:7px solid #00B5E2;
+}
+
+.info-space{
+  background-color: #003B5C;
+  color: white;
+  text-align: center;
+}
+.accesoi{
+  display: center;
+}
+.foto{
+  display:inline;
+  padding: 5%;
+}
+.nombre{
+  display:inline;
+  padding: 5%;
+}
+
  .head{
   background-color:#003B5C;
   font-family: 'Source Sans Pro', sans-serif;
@@ -123,12 +146,7 @@ h3{
     color: white;
     text-align: center;
   }
-  .info-space{
-    background-color: #003B5C;
-    color: white;
-    font-size: .75 rem;
-    text-align: center;
-  }
+  
   img {
     width: 30%;
     height: 30%;
