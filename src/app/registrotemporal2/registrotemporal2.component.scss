@@ -7,7 +7,18 @@
     color: #003B5C;
     text-align: center;
   }
-  
+  .button {
+    background-color: #003B5C;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    }
  .head{
   background-color:#BBBCBC ;
   font-family: 'Source Sans Pro', sans-serif;
@@ -69,7 +80,9 @@ background-color:#003B5C;
   background-color:#00B5E2 ;
   }
 
-  .imagenp{
-    height: 50px;
-    width: 50px;
-}
+  .btnicon{
+    background-color: #00B5E2;
+    height:50px;
+    width:50px;
+    border:none;
+  }
