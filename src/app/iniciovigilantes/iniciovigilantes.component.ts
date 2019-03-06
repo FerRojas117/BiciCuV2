@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
   templateUrl: './iniciovigilantes.component.html',
   styleUrls: ['./iniciovigilantes.component.scss']
 })
-export class iniciovigilantesComponent {
+export class InicioVigilantesComponent {
 
 }

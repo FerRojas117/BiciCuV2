@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
   templateUrl: './registrotemporal.component.html',
   styleUrls: ['./registrotemporal.component.scss']
 })
-export class registrotemporalComponent {
+export class RegistroTemporalComponent {
 
 }

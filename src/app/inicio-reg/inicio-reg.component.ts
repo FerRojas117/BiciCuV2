@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
   templateUrl: './inicio-reg.component.html',
   styleUrls: ['./inicio-reg.component.scss']
 })
-export class InicioR {
+export class InicioRComponent {
 
 }

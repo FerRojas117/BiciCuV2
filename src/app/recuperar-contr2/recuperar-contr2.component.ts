@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './recuperar-contr2.component.html',
   styleUrls: ['./recuperar-contr2.component.scss'],
 })
-export class RecuperarContr2 {
+export class RecuperarContr2Component {
 
 }

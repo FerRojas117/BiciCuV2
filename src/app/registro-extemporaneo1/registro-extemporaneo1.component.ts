@@ -4,6 +4,6 @@ import { Component } from '@angular/core';
   templateUrl: './registro-extemporaneo1.component.html',
   styleUrls: ['./registro-extemporaneo1.component.scss']
 })
-export class c5Component {
+export class RegistroEx1Component {
 
 }

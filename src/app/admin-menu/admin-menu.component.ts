@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './admin-menu.component.html',
   styleUrls: ['./admin-menu.component.scss'],
 })
-export class AdminMenu {
+export class AdminMenuComponent {
 
 }

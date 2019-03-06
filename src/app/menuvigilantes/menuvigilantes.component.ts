@@ -4,5 +4,5 @@ import { Component } from '@angular/core';
   templateUrl: './menuvigilantes.component.html',
   styleUrls: ['./menuvigilantes.component.scss']
 })
-export class menuvigilantesComponent {
+export class MenuVigilantesComponent {
 }
