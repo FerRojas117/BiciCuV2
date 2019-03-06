@@ -24,6 +24,7 @@ import {  MenuVigilantesComponent } from './menuvigilantes/menuvigilantes.compon
 import { RegistroEx1Component } from './registro-extemporaneo1/registro-extemporaneo1.component';
 import { RegistroEx2Component } from './registro-extemporaneo2/registro-extemporaneo2.component';
 import { RegistroTemporalComponent } from './registrotemporal/registrotemporal.component';
+import { RegistroTemporal2Component } from './registrotemporal2/registrotemporal2.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,7 @@ import { RegistroTemporalComponent } from './registrotemporal/registrotemporal.c
     RegistroEx2Component,
     RegistroVigComponent,
     RegistroTemporalComponent,
-    RegistroTemporalComponent,
+    RegistroTemporal2Component,
 
   ],
   imports: [
