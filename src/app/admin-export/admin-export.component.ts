@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
-import { AdminMenu } from '../admin-menu/admin-menu.component';
-
+import { Component, OnInit } from '@angular/core';
+import { MenuComponent } from '../menu/menu.component';
+import { MenuServicio } from '../menu/menu.service'
 @Component({
   templateUrl: './admin-export.component.html',
   styleUrls: ['./admin-export.component.scss'],
 })
-export class AdminExport {
+export class AdminExport implements OnInit {
 
+  public constructor(private menuServicio: MenuServicio) {
+
+  }
+
+  ngOnInit() {
+    this.menuServicio.actualizarHeaderMenu('EXPORTAR');
+  }
 }

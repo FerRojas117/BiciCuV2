@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './inicio/inicio.component';
-import { AdminMenu } from './admin-menu/admin-menu.component';
 import { AdminControl } from './admin-control/admin-control.component';
 import { AdminAccesos } from './admin-accesos/admin-accesos.component';
 import { AdminExport } from './admin-export/admin-export.component';
@@ -21,7 +20,6 @@ import { MenuComponent } from './menu/menu.component';
   declarations: [
     AppComponent,
     InicioComponent,
-    AdminMenu,
     AdminControl,
     AdminAccesos,
     AdminExport,

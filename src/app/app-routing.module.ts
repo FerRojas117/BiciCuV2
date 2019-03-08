@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { InicioComponent } from './inicio/inicio.component';
-import { AdminMenu } from './admin-menu/admin-menu.component';
+
 import { AdminControl } from './admin-control/admin-control.component';
 import { AdminAccesos } from './admin-accesos/admin-accesos.component';
 import { AdminRegistroEx1 } from './admin-registroEx1/admin-registroEx1.component';
@@ -13,10 +13,11 @@ import { RecuperarContr2 } from './recuperar-contr2/recuperar-contr2.component';
 import { InicioR } from './inicio-reg/inicio-reg.component';
 import { Intro } from './intro/intro.component';
 import { AdminRegistroEx2 } from './admin-registroEx2/admin-registroEx2.component';
+import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [
   {path: '', component: InicioComponent},
-  {path: 'amenu', component: AdminMenu},
+  {path: 'amenu', component: MenuComponent},
   {path: 'aControlB', component: AdminControl},
   {path: 'aAccesos', component: AdminAccesos},
   {path: 'aRegE1', component: AdminRegistroEx1},
