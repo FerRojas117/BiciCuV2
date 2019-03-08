@@ -1,134 +1,51 @@
+
 .inicio-background{
-    background-color: rgb(255, 255, 255);
     position: absolute;
     font-family: 'Source Sans Pro', sans-serif;
     width: 100%;
     height: 100%;
     color: #003B5C;
     text-align: center;
+    background-color: rgb(255, 255, 255);
   }
-
- .head{
-  background-color:#003B5C;
-  font-family: 'Source Sans Pro', sans-serif;
-    color: white;
-    text-align: center;
- }
- input[type=text] {
-  width: 90%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 2px solid#003B5C;
-
-}
-
-input[type=email] {
-    width: 90%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 2px solid#003B5C;
-  
-  }
-
-select {
-  width: 90%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 2px solid#003B5C;
-
-}
-input[type=password] {
-  width: 90%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 2px solid#003B5C;
-
-}
-
-.boton-personalizado {
-text-decoration:none;
-font-weight:600;
-font-size:20px;
-color:#ffffff;
-padding-top:5px;
-padding-bottom:5px;
-padding-left:10px;
-padding-right:10px;
-background-color:#003B5C;
-}
-
-.boton-personalizado2 {
-    text-decoration:none;
-    font-weight:600;
-    font-size:20px;
-    color:#ffffff;
-    padding-top:20px;
-    padding-bottom:20px;
-    padding-left:40px;
-    padding-right:40px;
+  .head{
     background-color:#003B5C;
-    }
-    .boton-personalizado3 {
-        text-decoration:none;
-        font-weight:600;
-        font-size:20px;
-        color:#ffffff;
-        padding-top:5px;
-        padding-bottom:5px;
-        padding-left:10px;
-        padding-right:10px;
-        background-color:#00B5E2 ;
-        }
-        .boton-personalizado4 {
-            text-decoration:none;
-            font-weight:600;
-            font-size:20px;
-            color:#003B5C;
-            padding-top:5px;
-            padding-bottom:5px;
-            padding-left:10px;
-            padding-right:10px;
-            background-color:#BBBCBC ;
-            }
-            .boton-personalizado5 {
-                text-decoration:none;
-                font-weight:600;
-                font-size:20px;
-                color:#ffffff;
-                padding-top:5px;
-                padding-bottom:5px;
-                padding-left:5px;
-                padding-right:5px;
-                background-color:#00B5E2 ;
-                }
+    font-family: 'Source Sans Pro', sans-serif;
+      color: white;
+   }
+  .btnicon{
+    background-color: #00B5E2;
+    font-family: 'Source Sans Pro', sans-serif;
+    height:50px;
+    width:50px;
+    border:none;
+    color:white;
+  }
 .imagenp{
-    height: 200px;
-    width: 200px;
+    height: 180px;
+    width: 180px;
     border-radius:150px;
     border:7px solid #00B5E2;
+    text-align: center;
 }
 
-.imagenc{
-    height: 100px;
-    width: 100px;
-}
+    .fif {
+      display: inline-block;
+      text-align: left;
+      padding:5%;
+  }  
+  .fifc {
+    text-align: center;
+    display: inline-block;
+    padding:5%;
+}  
 
-.columna {
-    width:50%;
-    float:left;
-    background-color:white;
-    color: #003B5C;
-  }
-  
-  @media (max-width: 500px) {
-    
-    .columna {
-      width:auto;
-      float:none;
-    }
-    
-  }
+.pad{
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  background-color:#003B5C;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: white;
+  width: 100%;
+}
