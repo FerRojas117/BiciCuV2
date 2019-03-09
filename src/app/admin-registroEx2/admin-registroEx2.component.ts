@@ -11,6 +11,6 @@ export class AdminRegistroEx2 implements OnInit{
   }
 
   ngOnInit() {
-    this.menuServicio.actualizarHeaderMenu('REGISTRO EXTEMPORANEO 2')
+    this.menuServicio.actualizarHeaderMenu('Registro Extemporáneo')
   }
 }

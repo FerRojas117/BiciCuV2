@@ -8,6 +8,6 @@ import { MenuServicio } from '../menu/menu.service'
 export class RegistroVig  implements  OnInit{
   public constructor(private menuServicio: MenuServicio) { }
   ngOnInit() {
-    this.menuServicio.actualizarHeaderMenu("REGISTRO VIGILANTES")
+    this.menuServicio.actualizarHeaderMenu("Registro de Vigilantes")
   }
 }

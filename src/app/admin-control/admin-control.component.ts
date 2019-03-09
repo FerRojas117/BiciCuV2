@@ -9,6 +9,6 @@ export class AdminControl implements OnInit{
   public constructor( private menuServicio: MenuServicio) { }
 
   ngOnInit() {
-    this.menuServicio.actualizarHeaderMenu('CONTROL');
+    this.menuServicio.actualizarHeaderMenu('Control de Bicicletas');
   }
 }

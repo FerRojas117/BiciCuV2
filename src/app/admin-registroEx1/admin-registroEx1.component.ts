@@ -6,7 +6,7 @@ import { MenuServicio } from '../menu/menu.service'
   styleUrls: ['./admin-registroEx1.component.scss'],
 })
 export class AdminRegistroEx1 implements OnInit {
-    public texto: string = 'REGISTRO EXTEMPORANEO';
+    public texto: string = 'Registro Extemporáneo';
     public constructor(private menuServicio : MenuServicio) {
     }
 

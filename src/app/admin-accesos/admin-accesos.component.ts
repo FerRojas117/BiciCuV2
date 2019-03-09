@@ -11,6 +11,6 @@ export class AdminAccesos implements OnInit{
 
   }
   ngOnInit() {
-    this.menuServicio.actualizarHeaderMenu('ACCESOS');
+    this.menuServicio.actualizarHeaderMenu('Control de accesos');
   }
 }

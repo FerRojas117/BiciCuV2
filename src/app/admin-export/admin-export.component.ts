@@ -12,6 +12,6 @@ export class AdminExport implements OnInit {
   }
 
   ngOnInit() {
-    this.menuServicio.actualizarHeaderMenu('EXPORTAR');
+    this.menuServicio.actualizarHeaderMenu('Exportar Datos');
   }
 }
