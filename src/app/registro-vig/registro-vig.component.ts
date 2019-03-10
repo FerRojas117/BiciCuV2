@@ -5,19 +5,9 @@ import { MenuServicio } from '../menu/menu.service'
   templateUrl: './registro-vig.component.html',
   styleUrls: ['./registro-vig.component.scss'],
 })
-<<<<<<< HEAD
-export class RegistroVigComponent {
-
-}
-||||||| merged common ancestors
-export class RegistroVig {
-
-}
-=======
-export class RegistroVig  implements  OnInit{
+export class RegistroVigComponent  implements  OnInit{
   public constructor(private menuServicio: MenuServicio) { }
   ngOnInit() {
     this.menuServicio.actualizarHeaderMenu("Registro de Vigilantes")
   }
 }
->>>>>>> Valeria
