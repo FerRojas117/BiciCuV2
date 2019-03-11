@@ -5,6 +5,7 @@
     width: 100%;
     height: 100%;
     color: #003B5C;
+    font-size: 100%;
     text-align: center;
   }
   .btnicon{
@@ -19,13 +20,14 @@
     color: white;
     text-align: center;
   }
-  input[type=text] {
+  input[type=text] ,input[type=password] ,input[type=email] {
   width: 90%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
   border: 2px solid#003B5C;
-  
+  font-family: inherit;
+  color:#003B5C;
   }
   select {
   width: 90%;
@@ -33,17 +35,10 @@
   margin: 8px 0;
   box-sizing: border-box;
   border: 2px solid#003B5C;
-  
+  font-family: inherit;
+  color:#003B5C;
   }
-  input[type=password] {
-  width: 90%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 2px solid#003B5C;
-  
-  }
-  
+    
   .button {
     background-color: #003B5C;
     border: none;

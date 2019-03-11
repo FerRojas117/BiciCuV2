@@ -6,6 +6,7 @@
     height: 100%;
     color: #003B5C;
     text-align: center;
+    font-size: 100%;
   }
   .buttone {
     background-color: #003B5C;
@@ -15,8 +16,9 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 25px;
     margin: 4px 2px;
+    font-size: 1.125rem;
+    font-family: inherit;
   }
  .head{
   background-color:#003B5C;
@@ -24,13 +26,14 @@
     color: white;
     text-align: center;
  }
- input[type=text] {
+ input[type=text],input[type=password]  {
   width: 90%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
   border: 2px solid#003B5C;
-
+font-family: inherit;
+color:#003B5C;
 }
 select {
   width: 90%;
@@ -38,17 +41,9 @@ select {
   margin: 8px 0;
   box-sizing: border-box;
   border: 2px solid#003B5C;
-
+  font-family: inherit;
+color:#003B5C;
 }
-input[type=password] {
-  width: 90%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 2px solid#003B5C;
-
-}
-
 .boton-personalizado {
 text-decoration:none;
 font-weight:600;

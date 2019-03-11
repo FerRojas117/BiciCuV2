@@ -7,6 +7,7 @@
     color: #003B5C;
     text-align: center;
     background-color: rgb(255, 255, 255);
+    font-size: 100%;
   }
   .head{
     background-color:#003B5C;
@@ -20,6 +21,7 @@
     width:50px;
     border:none;
     color:white;
+    font-size: 1.25rem;
   }
 .imagenp{
     height: 180px;
@@ -33,6 +35,7 @@
       display: inline-block;
       text-align: left;
       padding:5%;
+      border-left:4px solid rgb(168, 194, 209);
   }  
   .fifc {
     text-align: center;
@@ -61,4 +64,10 @@ h3{
   color: white;
     text-align: center;
 
+}
+h4{
+  font-size: 1.25rem;
+}
+p{
+  font-size: 1.125rem;
 }

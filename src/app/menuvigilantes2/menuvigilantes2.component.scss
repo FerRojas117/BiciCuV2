@@ -6,6 +6,13 @@
   color: #003B5C;
   text-align: center;
   background-color: rgb(255, 255, 255);
+  font-size: 100%;
+}
+h4{
+  font-size: 1.25rem;
+}
+p{
+  font-size: 1.125rem;
 }
 .head{
   background-color:#003B5C;
@@ -26,6 +33,7 @@
     display: inline-block;
     text-align: left;
     padding:5%;
+    border-left:4px solid rgb(168, 194, 209);
 }  
 .fifc {
   text-align: center;
@@ -45,8 +53,7 @@ width: 100%;
 
 .boton-personalizado {
 text-decoration:none;
-font-weight:600;
-font-size:20px;
+font-size: 1.125rem;
 color:#ffffff;
 padding-top:5px;
 padding-bottom:5px;
@@ -54,12 +61,12 @@ padding-left:10px;
 padding-right:10px;
 background-color:#003B5C;
 border: none;
+font-family: inherit;
 }
 
 .boton-personalizado2 {
     text-decoration:none;
-    font-weight:600;
-    font-size:20px;
+    font-size: 1.125rem;
     color:#ffffff;
     padding-top:20px;
     padding-bottom:20px;
@@ -67,11 +74,11 @@ border: none;
     padding-right:40px;
     background-color:#003B5C;
     border: none;
+    font-family: inherit;
     }
     .boton-personalizado3 {
         text-decoration:none;
-        font-weight:600;
-        font-size:20px;
+        font-size: 1.125rem;
         color:#ffffff;
         padding-top:5px;
         padding-bottom:5px;
@@ -79,11 +86,11 @@ border: none;
         padding-right:10px;
         background-color:#00B5E2 ;
         border: none;
+        font-family: inherit;
         }
         .boton-personalizado4 {
             text-decoration:none;
-            font-weight:600;
-            font-size:20px;
+            font-size: 1.125rem;
             color:#003B5C;
             padding-top:5px;
             padding-bottom:5px;
@@ -91,6 +98,7 @@ border: none;
             padding-right:10px;
             background-color:#BBBCBC ;
             border: none;
+            font-family: inherit;
             }
             .bar {
               overflow: hidden;

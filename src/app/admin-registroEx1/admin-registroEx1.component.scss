@@ -6,6 +6,7 @@
   height: 100%;
   color: #003B5C;
   text-align: center;
+  font-size: 100%;
 }
 
 .head{
@@ -26,6 +27,8 @@ padding: 12px 20px;
 margin: 8px 0;
 box-sizing: border-box;
 border: 2px solid#003B5C;
+font-family: inherit;
+color: #003B5C;
 }
 select {
 width: 90%;
@@ -33,7 +36,8 @@ padding: 12px 20px;
 margin: 8px 0;
 box-sizing: border-box;
 border: 2px solid#003B5C;
-
+font-family: inherit;
+color: #003B5C;
 }
 
 .button {

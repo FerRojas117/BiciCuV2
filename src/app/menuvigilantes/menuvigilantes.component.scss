@@ -6,12 +6,14 @@
     height: 100%;
     color: #003B5C;
     text-align: center;
+    font-size: 100%;
   }
 
 .boton-personalizado {
 text-decoration:none;
 font-weight:600;
-font-size:20px;
+font-size: 1.5rem;
+font-family: inherit;
 color:#ffffff;
 padding-top:100px;
 padding-bottom:100px;
@@ -24,7 +26,8 @@ border: none;
 .boton-personalizado2 {
     text-decoration:none;
     font-weight:600;
-    font-size:20px;
+    font-size: 1.125rem;
+    font-family: inherit;
     color:#ffffff;
     padding-top:20px;
     padding-bottom:20px;

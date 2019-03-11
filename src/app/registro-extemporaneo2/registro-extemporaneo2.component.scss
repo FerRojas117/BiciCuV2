@@ -6,6 +6,7 @@
     height: 100%;
     color: #003B5C;
     text-align: center;
+    font-size: 100%;
   }
   
 .btnicon{
@@ -60,9 +61,11 @@ input[type=password] {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 1.125rem;
+  font-family: inherit;
   margin: 4px 2px;
   cursor: pointer;
+  
 }
 .buttongris {
     background-color: rgb(172, 186, 194);
@@ -72,7 +75,8 @@ input[type=password] {
     text-align: right;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 1.125rem;
+  font-family: inherit;
     margin: 4px 2px;
     cursor: pointer;
   }

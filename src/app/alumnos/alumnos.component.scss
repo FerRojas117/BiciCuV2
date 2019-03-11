@@ -6,6 +6,7 @@
     height: 100%;
     color: #003B5C;
     text-align: center;
+    font-size: 100%;
   }
   
  .head{
@@ -48,6 +49,8 @@ input[type=password] {
   display: inline-block;
   font-size: 25px;
   margin: 4px 2px;
+  font-size: 1.125rem;
+  font-family: inherit;
 }
 
 

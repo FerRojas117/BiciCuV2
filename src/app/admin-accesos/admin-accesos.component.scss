@@ -6,6 +6,7 @@
     height: 100%;
     color: #003B5C;
     text-align: center;
+    font-size: 100%;
   }
   .imagenp{
     height: 200px;
@@ -13,7 +14,6 @@
     border-radius:150px;
     border:7px solid #00B5E2;
 }
-
 .info-space{
   background-color: #003B5C;
   color: white;
@@ -154,4 +154,10 @@ h3{
   .info-img h2{
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 415 px;
+  }
+  h4{
+    font-size: 1.25rem;
+  }
+  p{
+    font-size: 1.125rem;
   }
