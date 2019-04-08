@@ -1,38 +1,55 @@
 <div class="inicio-background">
   <app-menu-component></app-menu-component>
 <br>
-        <form class="formulario">
-      Nombre Completo:<br>
-      <input type="text" name="Nombre" >
+        <form class="formulario" (submit)="onSignUp()" [formGroup]="form">
+      Nombre(s):<br>
+      <input ngModel type="text" formControlName="name" >
+      <br>
+      Apellido Paterno:<br>
+      <input ngModel type="text" formControlName="apePaterno" >
+      <br>
+      Apellido Materno:<br>
+      <input ngModel type="text" formControlName="apeMaterno" >
+      <br>
+      Matricula:<br>
+      <input ngModel type="text" formControlName="matricula">
+      <br>
       <br>
       Clave:<br>
-      <input type="text" name="Matricula">
+      <input ngModel type="text" formControlName="clave">
+      <br>
+      telefono:<br>
+      <input ngModel type="text" formControlName="telefono">
       <br><br>
       Acceso:<br>
-      <select name="Acceso">
-             <option value="AccA">Acceso A</option>
-             <option value="AccB">Acceso B</option>
-             <option value="AccC">Acceso C</option>
-             <option value="AccD">Acceso D</option>
-             <option value="AccE">Acceso E</option>
-             <option value="AccF">Acceso F</option>
-             <option value="AccG">Acceso G</option>
-             <option value="AccH">Acceso H</option>
-             <option value="AccI">Acceso I</option>
-             <option value="AccJ">Acceso J</option>
-             <option value="AccK">Acceso K</option>
+      <select formControlName="acceso">
+             <option value="AccesoA">Acceso A</option>
+             <option value="AccesoB">Acceso B</option>
+             <option value="AccesoC">Acceso C</option>
+             <option value="AccesoD">Acceso D</option>
+             <option value="AccesoE">Acceso E</option>
+             <option value="AccesoF">Acceso F</option>
+             <option value="AccesoG">Acceso G</option>
+             <option value="AccesoH">Acceso H</option>
+             <option value="AccesoI">Acceso I</option>
+             <option value="AccesoJ">Acceso J</option>
+             <option value="AccesoK">Acceso K</option>
           </select>
           <br><br>
           E-mail:<br>
-          <input type="email" name="email"><br>
+      <input ngModel type="email" formControlName="email"><br>
       Contraseña:<br>
-      <input type="password" name="Contraseña">
+      <input ngModel type="password" formControlName="contrasena">
       <br>
       <button class="btnicon">
-          <input type="image"src="assets/img/camara.png" alt="Descargar" width="80%" height="60%" >
+          <input type="image"src="assets/img/camara.png" alt="Descargar" width="80%" height="60%"
+          (click)="filePicker.click()" >
       </button>
-
+      <input type="file" #filePicker (change)="onImagePicked($event)">
+      <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview && form.get('image').valid">
+        <img [src]="imagePreview" [alt]="form.value.title">
+      </div>
     <br>
-    <input type="button" class="button" value="Guardar">
+    <input type="submit" class="button" value="Guardar">
     </form>
     </div>
