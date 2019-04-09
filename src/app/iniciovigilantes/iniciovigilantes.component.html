@@ -6,15 +6,15 @@
 
   </div>
   <br>
-    <form class="formulario">
+    <form class="formulario" (submit)="onLogin()" [formGroup]="form">
         Clave:<br>
-        <input type="text" name="clave" >
+        <input type="text" formControlName="clave" >
         <br><br>
         Contraseña:<br>
-            <input type="password" name="contrasena">
+            <input type="password" formControlName="contrasena">
             <br><br>
         Acceso:<br>
-            <select name="acceso">
+            <select formControlName="acceso">
                 <option value="AccesoA">Acceso A</option>
                 <option value="AccesoB">Acceso B</option>
                 <option value="AccesoC">Acceso C</option>
@@ -28,7 +28,7 @@
                 <option value="AccesoK">Acceso K</option>
             </select>
             <br><br>
-            <input type="button" class="buttone" value="Entrar">
+            <input type="submit" class="buttone" value="Entrar">
             <br>
         <p routerLink="/recuperar2">¿Olvidaste la contraseña?</p>
     </form>

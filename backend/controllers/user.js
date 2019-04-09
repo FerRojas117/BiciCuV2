@@ -159,10 +159,47 @@ exports.createUser = (req, res, next) => {
 }
 
 exports.userLoginVigilante = (req, res, next) => {
-  let fetchedUser;
-
+  var userClave = req.body.clave;
+  var userAcceso = req.body.acceso;
+  var userPassword = req.body.password;
+  // UPDATE vigilantes SET Acceso = (?) WHERE Clave = (?)
+    switch (userAcceso) {
+      case "AccesoA":
+      userAcceso = "1"
+        break;
+      case "AccesoB":
+      userAcceso = "2"
+        break;
+      case "AccesoC":
+      userAcceso = "3"
+        break;
+      case "AccesoD":
+      userAcceso = "4"
+        break;
+      case "AccesoE":
+      userAcceso = "5"
+        break;
+      case "AccesoF":
+      userAcceso = "6"
+        break;
+      case "AccesoG":
+      userAcceso = "7"
+        break;
+      case "AccesoH":
+      userAcceso = "8"
+        break;
+      case "AccesoI":
+      userAcceso = "9"
+        break;
+      case "AccesoJ":
+      userAcceso = "10"
+        break;
+      case "AccesoK":
+      userAcceso = "11"
+        break;
+    }
   var queryVigilante ="SELECT ID FROM usuarios INNER JOIN vigilantes ON usuarios.Matricula = vigilantes.Matricula WHERE vigilantes.Clave = (?)";
-  mysql.query(queryVigilante, [req.body.clave], function(err, rows) {
+  mysql.query(queryVigilante, [userClave], function(err, rows) {
     if(err) {
       res.status(401).json({
         message: "Autenticación fallida"
@@ -170,35 +207,46 @@ exports.userLoginVigilante = (req, res, next) => {
     }
     else {
       console.log(rows.ID);
+      var userID = rows.ID;
       var queryPassVigilante = "SELECT passwordHash FROM logins INNER JOIN usuarios ON usuarios.ID = logins.RelUsuarioID WHERE usuarios.ID = (?)"
-      mysql.query(queryPassVigilante, [rows.ID], function(err, rows) {
+      mysql.query(queryPassVigilante, [userID], function(err, rows) {
         if(err) {
           res.status(401).json({
             message: "Autenticación fallida"
           });
         }
         else {
-          bcrypt.compare(req.password, rows.passwordHash).
-          then(function(res) {
+          bcrypt.compare(userPassword, rows.passwordHash)
+          .then(function(res) {
             if(!res) {
               return res.status(401).json({
                 message: "Autenticación fallida"
               });
             }
-            const token = jwt.sign(
+            console.log("Autenticación exitosa");
+            var queryUpdateAcceso = "UPDATE vigilantes SET Acceso = (?) WHERE Clave = (?)";
+            mysql.query( queryUpdateAcceso, [userAcceso, userClave], function(err, rows) {
+              if(err)
               {
-                email: fetchedUser.email,
-                userId: fetchedUser._id
-              },
-              'Token_Bici_CU_1234567890',
-              {
-                expiresIn: "1h"
+                return res.status(401).json({
+                  message: "Autenticación fallida"
+                });
               }
-            );
-            return res.status(200).json({
-              token: token,
-              expiresIn: 3600,
-              userId: fetchedUser._id
+              const token = jwt.sign(
+                {
+                  clave: userClave,
+                  userID: userID
+                },
+                'Token_Bici_CU_1234567890',
+                {
+                  expiresIn: "1h"
+                }
+              );
+              return res.status(200).json({
+                token: token,
+                expiresIn: 3600,
+                userID: userClave
+              });
             });
           });
           return res.status(401).json({
