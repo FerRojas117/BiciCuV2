@@ -1,0 +1,12 @@
+<div class="inicio-background">
+    <h1>
+        El código QR de la bicicleta es:
+    </h1><br>
+    <div class="code">
+        <qrcode [qrdata]="myAngularxQrCode" [size]="256" [level]="'M'"></qrcode>
+
+    </div>
+    <br>
+    <input type="button" class="button" value="Guardar Imagen" > <br><br>
+    <input type="button" class="button" value="Siguiente" routerLink="/inicioR">
+  </div>

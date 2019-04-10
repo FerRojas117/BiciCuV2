@@ -23,6 +23,7 @@ import { RegistroEx1Component } from './registro-extemporaneo1/registro-extempor
 import { RegistroEx2Component } from './registro-extemporaneo2/registro-extemporaneo2.component';
 import { RegistroTemporalComponent } from './registrotemporal/registrotemporal.component';
 import { RegistroTemporal2Component } from './registrotemporal2/registrotemporal2.component';
+import { GeneraQRComponent } from './generaQR/generaQR.component';
 
 
 const routes: Routes = [
@@ -47,6 +48,7 @@ const routes: Routes = [
   {path: 'regE2', component: RegistroEx2Component},
   {path: 'regTemp1', component: RegistroTemporalComponent},
   {path: 'regTemp2', component: RegistroTemporal2Component},
+  {path: 'genQR', component: GeneraQRComponent},
 
 ];
 

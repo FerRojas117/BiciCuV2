@@ -25,6 +25,7 @@ import { RegistroTemporalComponent } from './registrotemporal/registrotemporal.c
 import { RegistroTemporal2Component } from './registrotemporal2/registrotemporal2.component';
 import { MenuComponent } from './menu/menu.component';
 import { from } from 'rxjs';
+import { GeneraQRComponent } from './generaQR/generaQR.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,7 @@ import { from } from 'rxjs';
     RegistroVigComponent,
     RegistroTemporalComponent,
     RegistroTemporal2Component,
-
+GeneraQRComponent
   ],
   imports: [
     BrowserModule,
