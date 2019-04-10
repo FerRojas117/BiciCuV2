@@ -27,6 +27,15 @@ import { MenuComponent } from './menu/menu.component';
 import { from } from 'rxjs';
 import { GeneraQRComponent } from './generaQR/generaQR.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HammerCardComponent } from './HammerQRcode/hammer.component';
+import { QRCodeModule } from 'angularx-qrcode';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { ScanQRComponent } from './ScanQR/scanqr.component';
+import { NgQRCodeReaderModule } from 'ng2-qrcode-reader';
+import { CommonModule } from '@angular/common';
+import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,8 +67,16 @@ GeneraQRComponent
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    QRCodeModule,
+    ZXingScannerModule,
+    NgQRCodeReaderModule,
+    CommonModule,
+    ZXingScannerModule,
+    ZXingScannerModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+platformBrowserDynamic().bootstrapModule(AppModule);
