@@ -28,11 +28,11 @@ import { from } from 'rxjs';
 import { GeneraQRComponent } from './generaQR/generaQR.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HammerCardComponent } from './HammerQRcode/hammer.component';
+//import { HammerCardComponent } from './HammerQRcode/hammer.component';
 import { QRCodeModule } from 'angularx-qrcode';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
-import { ScanQRComponent } from './ScanQR/scanqr.component';
-import { NgQRCodeReaderModule } from 'ng2-qrcode-reader';
+//import { ScanQRComponent } from './ScanQR/scanqr.component';
+//import { NgQRCodeReaderModule } from 'ng2-qrcode-reader';
 import { CommonModule } from '@angular/common';
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
@@ -55,6 +55,9 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
     InicioVigilantesComponent,
     MenuComponent,
     MenuAlumnoComponent,
+
+
+        
     MenuVigilantes2Component,
     MenuVigilantesComponent,
     RegistroEx1Component,
@@ -70,7 +73,7 @@ GeneraQRComponent
     BrowserAnimationsModule,
     QRCodeModule,
     ZXingScannerModule,
-    NgQRCodeReaderModule,
+    //NgQRCodeReaderModule,
     CommonModule,
     ZXingScannerModule,
     ZXingScannerModule.forRoot()

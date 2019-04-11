@@ -1,13 +1,12 @@
 <div class="inicio-background">
     <h1>
-        El código QR de la bicicleta es:
+        {{Nombre}}
     </h1><br>
     <div class="code">
-        <qrcode [qrdata]="myAngularxQrCode" [size]="256" [level]="'M'"></qrcode>
-
+        <qrcode [qrdata]="CQRCode" [size]="256" [level]="'M'"></qrcode>
     </div>
     <br>
     <br>
-    <input type="button" class="button" value="Guardar Imagen" > <br><br>
+    <input type="button" onClick="window.print()" class="button" value="Guardar" >
     <input type="button" class="button" value="Salir" routerLink="/inicioR">
   </div>
