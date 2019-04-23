@@ -70,92 +70,91 @@ exports.createUser = (req, res, next) => {
               });
             }
             else {
-              res.status(201).json({
-                message: "Inserción de usuario correcta"
-              });
+                  console.log("EL ROL" + relRolID);
+                  switch(relRolID) {
+                    case "2":
+                    // vigilantes
+                    var acceso = req.body.acceso;
+                    switch (acceso) {
+                      case "AccesoA":
+                        acceso = "1"
+                        break;
+                      case "AccesoB":
+                        acceso = "2"
+                        break;
+                      case "AccesoC":
+                        acceso = "3"
+                        break;
+                      case "AccesoD":
+                        acceso = "4"
+                        break;
+                      case "AccesoE":
+                        acceso = "5"
+                        break;
+                      case "AccesoF":
+                        acceso = "6"
+                        break;
+                      case "AccesoG":
+                        acceso = "7"
+                        break;
+                      case "AccesoH":
+                        acceso = "8"
+                        break;
+                      case "AccesoI":
+                        acceso = "9"
+                        break;
+                      case "AccesoJ":
+                        acceso = "10"
+                        break;
+                      case "AccesoK":
+                        acceso = "11"
+                        break;
+                    }
+
+                      var queryInsercionVigilante = "INSERT INTO vigilantes (Matricula, Acceso, Clave)";
+                      queryInsercionVigilante+= " VALUES (?)";
+                      var arrayVigilante = [
+                        req.body.matricula,
+                        acceso,
+                        req.body.clave
+                      ];
+                      mysql.query(queryInsercionVigilante, [arrayVigilante], function(err, rows) {
+                        if(err) {
+                          console.log(err);
+                        }
+                        else {
+                          console.log("todo bien");
+                        }
+                      });
+                    break;
+                    case "3":
+                    //alumnos
+                      var queryInsercionAlumno = "INSERT INTO alumnos (Matricula, Facultad)";
+                      queryInsercionAlumno+= " VALUES (?)";
+                      var arrayAlumno = [
+                        req.body.matricula,
+                        req.body.facultad
+                      ];
+                      mysql.query(queryInsercionAlumno, arrayAlumno, function(err, rows) {
+                        if(err) {
+                          console.log(err);
+                        }
+                        else {
+                          console.log("todo bien");
+                        }
+                      });
+                    break;
+                    default:
+                    break;
+                  }
+                res.status(201).json({
+                  message: "Inserción de usuario correcta"
+                });
             }
           });
         });
     }
   });
-
- console.log("EL ROL" + relRolID);
-  switch(relRolID) {
-    case "2":
-    // vigilantes
-    var acceso = req.body.acceso;
-    switch (acceso) {
-      case "AccesoA":
-        acceso = "1"
-        break;
-      case "AccesoB":
-        acceso = "2"
-        break;
-      case "AccesoC":
-        acceso = "3"
-        break;
-      case "AccesoD":
-        acceso = "4"
-        break;
-      case "AccesoE":
-        acceso = "5"
-        break;
-      case "AccesoF":
-        acceso = "6"
-        break;
-      case "AccesoG":
-        acceso = "7"
-        break;
-      case "AccesoH":
-        acceso = "8"
-        break;
-      case "AccesoI":
-        acceso = "9"
-        break;
-      case "AccesoJ":
-        acceso = "10"
-        break;
-      case "AccesoK":
-        acceso = "11"
-        break;
-    }
-
-      var queryInsercionVigilante = "INSERT INTO vigilantes (Matricula, Acceso, Clave)";
-      queryInsercionVigilante+= " VALUES (?)";
-      var arrayVigilante = [
-        req.body.matricula,
-        acceso,
-        req.body.clave
-      ];
-      mysql.query(queryInsercionVigilante, [arrayVigilante], function(err, rows) {
-        if(err) {
-          console.log(err);
-        }
-        else {
-          console.log("todo bien");
-        }
-      });
-    break;
-    case "3":
-    //alumnos
-      var queryInsercionAlumno = "INSERT INTO alumnos (Matricula, Facultad)";
-      queryInsercionAlumno+= " VALUES (?)";
-      var arrayAlumno = [
-        req.body.matricula,
-        req.body.facultad
-      ];
-      mysql.query(queryInsercionAlumno, arrayAlumno, function(err, rows) {
-        if(err) {
-          console.log(err);
-        }
-        else {
-          console.log("todo bien");
-        }
-      });
-    break;
-    default:
-    break;
-  }
 }
 
 exports.userLoginVigilante = (req, res, next) => {
@@ -198,6 +197,7 @@ exports.userLoginVigilante = (req, res, next) => {
       userAcceso = "11"
         break;
     }
+  console.log(userClave);
   var queryVigilante ="SELECT ID FROM usuarios INNER JOIN vigilantes ON usuarios.Matricula = vigilantes.Matricula WHERE vigilantes.Clave = (?)";
   mysql.query(queryVigilante, [userClave], function(err, rows) {
     if(err) {
@@ -206,54 +206,68 @@ exports.userLoginVigilante = (req, res, next) => {
       });
     }
     else {
-      console.log(rows.ID);
-      var userID = rows.ID;
-      var queryPassVigilante = "SELECT passwordHash FROM logins INNER JOIN usuarios ON usuarios.ID = logins.RelUsuarioID WHERE usuarios.ID = (?)"
-      mysql.query(queryPassVigilante, [userID], function(err, rows) {
-        if(err) {
-          res.status(401).json({
-            message: "Autenticación fallida"
-          });
-        }
-        else {
-          bcrypt.compare(userPassword, rows.passwordHash)
-          .then(function(res) {
-            if(!res) {
-              return res.status(401).json({
-                message: "Autenticación fallida"
-              });
-            }
-            console.log("Autenticación exitosa");
-            var queryUpdateAcceso = "UPDATE vigilantes SET Acceso = (?) WHERE Clave = (?)";
-            mysql.query( queryUpdateAcceso, [userAcceso, userClave], function(err, rows) {
-              if(err)
-              {
-                return res.status(401).json({
-                  message: "Autenticación fallida"
-                });
-              }
-              const token = jwt.sign(
-                {
-                  clave: userClave,
-                  userID: userID
-                },
-                'Token_Bici_CU_1234567890',
-                {
-                  expiresIn: "1h"
-                }
-              );
-              return res.status(200).json({
-                token: token,
-                expiresIn: 3600,
-                userID: userClave
-              });
+      if(rows.length <= 0){
+        res.status(401).json({
+          message: "Usuario no existe"
+        });
+      }
+      else {
+        console.log(rows[0].ID);
+        //console.log(rows.ID);
+        var userID = rows[0].ID;
+        var queryPassVigilante = "SELECT passwordHash FROM logins INNER JOIN usuarios ON usuarios.ID = logins.RelUsuarioID WHERE usuarios.ID = (?)"
+        mysql.query(queryPassVigilante, [userID], function(err, rows) {
+          if(err) {
+            return res.status(401).json({
+              message: "Autenticación fallida"
             });
-          });
-          return res.status(401).json({
-            message: "Credenciales Inválidas !"
-          });
-        }
-      });
+          }
+          else {
+            console.log(rows[0].passwordHash);
+            console.log(userPassword);
+            bcrypt.compare(userPassword, rows[0].passwordHash,  function(err, resultado) {
+                if(resultado) {
+                  console.log("Autenticación exitosa");
+                  var queryUpdateAcceso = "UPDATE vigilantes SET Acceso = (?) WHERE Clave = (?)";
+                  mysql.query( queryUpdateAcceso, [userAcceso, userClave], function(err, rows) {
+                    if(err)
+                    {
+                      return res.status(401).json({
+                        message: "Autenticación fallida"
+                      });
+                    }
+                    console.log("ENTRO EN FUNCION");
+                    const token = jwt.sign(
+                      {
+                        clave: userClave,
+                        userID: userID
+                      },
+                      'Token_Bici_CU_1234567890',
+                      {
+                        expiresIn: "1h"
+                      }
+                    );
+                    return res.status(200).json({
+                      token: token,
+                      expiresIn: 3600,
+                      userID: userClave
+                    });
+                  });
+                }
+                else{
+                  return res.status(401).json({
+                    message: "Autenticación fallida"
+                  });
+                }
+              }
+            );
+           /*   return res.status(401).json({
+              message: "Credenciales Inválidas !"
+            });
+            */
+          }
+        });
+      }
     }
   });
 

@@ -12,7 +12,7 @@ export class InicioVigilantesComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
   ngOnInit() {
-    this.form = new FormGroup( {
+    this.form = new FormGroup({
       clave: new FormControl( null, {
         validators: [Validators.required, Validators.minLength(5)]
       }),

@@ -23,7 +23,7 @@ import { RegistroEx1Component } from './registro-extemporaneo1/registro-extempor
 import { RegistroEx2Component } from './registro-extemporaneo2/registro-extemporaneo2.component';
 import { RegistroTemporalComponent } from './registrotemporal/registrotemporal.component';
 import { RegistroTemporal2Component } from './registrotemporal2/registrotemporal2.component';
-
+import { errorComponent } from './error/error.component';
 
 const routes: Routes = [
   {path: '', component: InicioComponent},
@@ -47,7 +47,7 @@ const routes: Routes = [
   {path: 'regE2', component: RegistroEx2Component},
   {path: 'regTemp1', component: RegistroTemporalComponent},
   {path: 'regTemp2', component: RegistroTemporal2Component},
-
+  {path: 'error', component: errorComponent},
 ];
 
 @NgModule({

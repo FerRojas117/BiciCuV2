@@ -24,6 +24,7 @@ import { RegistroEx2Component } from './registro-extemporaneo2/registro-extempor
 import { RegistroTemporalComponent } from './registrotemporal/registrotemporal.component';
 import { RegistroTemporal2Component } from './registrotemporal2/registrotemporal2.component';
 import { MenuComponent } from './menu/menu.component';
+import { errorComponent } from './error/error.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { from } from 'rxjs';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -54,7 +55,7 @@ import { AuthInterceptor } from './auth/auth-interceptor';
     RegistroVigComponent,
     RegistroTemporalComponent,
     RegistroTemporal2Component,
-
+    errorComponent
   ],
   imports: [
     BrowserModule,
