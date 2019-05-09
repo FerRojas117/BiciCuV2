@@ -110,7 +110,6 @@ exports.createUser = (req, res, next) => {
                         acceso = "11"
                         break;
                     }
-
                       var queryInsercionVigilante = "INSERT INTO vigilantes (Matricula, Acceso, Clave)";
                       queryInsercionVigilante+= " VALUES (?)";
                       var arrayVigilante = [
@@ -129,13 +128,15 @@ exports.createUser = (req, res, next) => {
                     break;
                     case "3":
                     //alumnos
+                    console.log("Alumno: " + req.body.matricula + ", " + req.body.facultad);
                       var queryInsercionAlumno = "INSERT INTO alumnos (Matricula, Facultad)";
                       queryInsercionAlumno+= " VALUES (?)";
                       var arrayAlumno = [
                         req.body.matricula,
                         req.body.facultad
                       ];
-                      mysql.query(queryInsercionAlumno, arrayAlumno, function(err, rows) {
+                      console.log(arrayAlumno);
+                      mysql.query(queryInsercionAlumno, [arrayAlumno], function(err, rows) {
                         if(err) {
                           console.log(err);
                         }
@@ -250,7 +251,7 @@ exports.userLoginVigilante = (req, res, next) => {
                     return res.status(200).json({
                       token: token,
                       expiresIn: 3600,
-                      userID: userClave
+                      userID: userID
                     });
                   });
                 }
@@ -265,6 +266,71 @@ exports.userLoginVigilante = (req, res, next) => {
               message: "Credenciales Inválidas !"
             });
             */
+          }
+        });
+      }
+    }
+  });
+
+}
+
+exports.userLoginAlumno = (req, res, next) => {
+  var userMatricula = req.body.matricula;
+  var userPassword = req.body.password;
+
+  var queryAlumno ="SELECT ID FROM usuarios INNER JOIN alumnos ON usuarios.Matricula = alumnos.Matricula WHERE alumnos.Matricula = (?)";
+  mysql.query(queryAlumno, [userMatricula], function(err, rows) {
+    if(err) {
+      res.status(401).json({
+        message: "Autenticación fallida"
+      });
+    }
+    else {
+      if(rows.length <= 0){
+        res.status(401).json({
+          message: "Usuario no existe"
+        });
+      }
+      else {
+        console.log(rows[0].ID);
+        //console.log(rows.ID);
+        var userID = rows[0].ID;
+        var queryPassAlumno = "SELECT passwordHash FROM logins INNER JOIN usuarios ON usuarios.ID = logins.RelUsuarioID WHERE usuarios.ID = (?)"
+        mysql.query(queryPassAlumno, [userID], function(err, rows) {
+          if(err) {
+            return res.status(401).json({
+              message: "Autenticación fallida"
+            });
+          }
+          else {
+            console.log(rows[0].passwordHash);
+            console.log(userPassword);
+            bcrypt.compare(userPassword, rows[0].passwordHash,  function(err, resultado) {
+                if(resultado) {
+                  console.log("Autenticación exitosa");
+                    const token = jwt.sign(
+                      {
+                        matricula: userMatricula,
+                        userID: userID
+                      },
+                      'Token_Bici_CU_1234567890',
+                      {
+                        expiresIn: "1h"
+                      }
+                    );
+                    return res.status(200).json({
+                      token: token,
+                      expiresIn: 3600,
+                      userID: userID
+                    });
+                }
+                else{
+                  return res.status(401).json({
+                    message: "Autenticación fallida, password incorrecto"
+                  });
+                }
+              }
+            );
           }
         });
       }

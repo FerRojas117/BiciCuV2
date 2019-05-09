@@ -3,19 +3,18 @@
     <div class="bar">
     <h3>Alumnos</h3>
   </div>
-    
+
 </div>
 <br>
-            <form class="formulario">
+        <form class="formulario" (submit)="onLogin()" [formGroup]="form">
           Matricula:<br>
-          <input type="text" name="Matricula" >
+          <input type="text" formControlName="matricula" >
           <br>
-         
-              <br><br>
-              Contraseña:<br>
-              <input type="password" name="Contraseña">
-              <br>
-          <input type="button" class="buttone" value="Entrar" routerLink="/menuA">
+          <br><br>
+          Contraseña:<br>
+          <input type="password" formControlName="password">
+          <br>
+          <input type="submit" class="button" value="Iniciar Sesión">
           <br>
           <p routerLink="/recuperar2">Olvidaste tu contraseña ?</p>
         </form>

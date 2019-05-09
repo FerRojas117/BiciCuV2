@@ -5,5 +5,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./menualumno.component.scss']
 })
 export class MenuAlumnoComponent {
+  imagePath;
+
+
 
 }

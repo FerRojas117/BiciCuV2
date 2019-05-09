@@ -24,6 +24,7 @@ import { RegistroEx2Component } from './registro-extemporaneo2/registro-extempor
 import { RegistroTemporalComponent } from './registrotemporal/registrotemporal.component';
 import { RegistroTemporal2Component } from './registrotemporal2/registrotemporal2.component';
 import { errorComponent } from './error/error.component';
+import { AuthAlumnoGuard } from './auth/auth-Alumno.guard';
 
 const routes: Routes = [
   {path: '', component: InicioComponent},
@@ -40,7 +41,7 @@ const routes: Routes = [
   {path: 'alumnos', component: AlumnosComponent},
   {path: 'inicioVig', component: InicioVigilantesComponent},
   {path: 'menu', component: MenuComponent},
-  {path: 'menuA', component: MenuAlumnoComponent},
+  {path: 'menuA', component: MenuAlumnoComponent, canActivate: [AuthAlumnoGuard]},
   {path: 'menuVig2', component: MenuVigilantes2Component},
   {path: 'menuVig1', component: MenuVigilantesComponent},
   {path: 'regE1', component: RegistroEx1Component},
@@ -49,9 +50,9 @@ const routes: Routes = [
   {path: 'regTemp2', component: RegistroTemporal2Component},
   {path: 'error', component: errorComponent},
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
+  providers: [AuthAlumnoGuard]
 })
 export class AppRoutingModule { }

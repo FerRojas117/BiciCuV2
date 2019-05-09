@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuServicio } from '../menu/menu.service'
+import { MenuServicio } from '../menu/menu.service';
 import { AuthService } from '../auth/auth.service';
 import { NgForm } from '@angular/forms';
-import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { mimeType } from '../mime-type.validator';
 
 @Component({
