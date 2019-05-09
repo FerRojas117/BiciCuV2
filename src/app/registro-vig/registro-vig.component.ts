@@ -5,6 +5,13 @@ import { NgForm } from '@angular/forms';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { mimeType } from '../mime-type.validator';
 
+/*
+ * Esta clase recoge la información de registro-vig.component.html
+ * del formulario, y en el método ngOnInit se inicializan los campos
+ * que contendrá el formulario, se le pueden agregar acciones con
+ * Validators, como Validators.required que indica un campo obligatorio
+ *
+ */
 @Component({
   templateUrl: './registro-vig.component.html',
   styleUrls: ['./registro-vig.component.scss'],
@@ -13,6 +20,8 @@ export class RegistroVigComponent  implements  OnInit{
 
   form: FormGroup;
   imagePreview: string;
+  // en el constructor se instancia un objeto de la clase Inyectable
+  // AuthService, en este caso, authService
   public constructor(
     private menuServicio: MenuServicio,
     private authService: AuthService
@@ -66,7 +75,8 @@ export class RegistroVigComponent  implements  OnInit{
     };
     reader.readAsDataURL(file);
   }
-
+// en este método se manda la información al servicio de authservice mediante
+// su objeto, para crear un nuevo Vigilante
   onSignUp() {
     console.log(this.form.value.name +  '' + this.form.value.contrasena);
     this.authService.createUserVigilante(

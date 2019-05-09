@@ -2,6 +2,20 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const mysql = require("../db");
 
+
+/*
+* cada método en este controlador de usuarios, debe exportarse
+* de la siguiente manera: exports.nombredemétodo
+* todos los queries deben de ser parametrizados es decir con (?)
+* y consultados mediante la sintaxis:
+* (se infiere que ya se tiene la variable mysql, para hacer una consulta
+*   y que invoca al archivo db.js dentro de esta misma carpeta)
+* mysql.query( query(-que es de tipo string y parametrizado-), [arreglo de información que se envía],
+* function(parametros de funcion de salida) {
+* Cuerpo de funciónón.
+* })
+*/
+
 exports.createUser = (req, res, next) => {
  // mysql.getConnection para multiples queries
  const url = req.protocol + "://" + req.get("host");

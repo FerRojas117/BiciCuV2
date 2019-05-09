@@ -1,7 +1,12 @@
 <div class="inicio-background">
   <app-menu-component></app-menu-component>
 <br>
-        <form class="formulario" (submit)="onSignUp()" [formGroup]="form">
+      <!--
+        los formularios para el enviío de información, son
+        enviados mediante FormGroup y cada entrada con su respectivo
+        FormControlNAme
+       -->
+      <form class="formulario" (submit)="onSignUp()" [formGroup]="form">
       Nombre(s):<br>
       <input ngModel type="text" formControlName="name" >
       <br>

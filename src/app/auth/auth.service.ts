@@ -5,8 +5,16 @@ import { Router } from '@angular/router';
 import { AuthData } from './auth-data.model';
 import { LogInAlumno } from './auth-data-Alumno.model';
 
+/*
+* Servicio que funciona para registro, y autenticación de usuarios
+* Funciona de manera Injectable y se requiere instanciar un objeto
+* de esta clase en el constructor de cualquier otra clase para
+* utilizar sus métodos y obtener información de sus atributos privados
+*/
 @Injectable({ providedIn: 'root' })
 export class AuthService {
+  // roles de usuarios en BICICU 1=admin 2=vigilante 3=alumno
+
     private relRolIdVigilante = '2';
     private relRolIdAlumno = '3';
     private usuariosCol = 'prueba';
@@ -19,31 +27,31 @@ export class AuthService {
     private authUserTypeListener = new Subject<string>();
     constructor(private http: HttpClient, private router: Router ) {}
 
-
+    // método para obtener token obtenido al iniciar sesiómn un usuario
     getToken() {
       return this.token;
     }
-
+// método para obtener si uun usuario está auténticado
     getIsAuth() {
       return this.isAuthenticated;
     }
-
+// método para obtener el tipo de usuario que inició sesión
     getUserType() {
       return this.userType;
     }
-
+// método para obtener el ID de usuario que inició sesión
     getUserId() {
       return this.userId;
     }
-
+// método que retorna el cambio de status de inicio de sesión (en cuanto haya uno)
     getAuthStatusListener() {
       return this.authStatusListener.asObservable();
     }
-
+// método que retorna el cambio de status de tipo de usuarui (en cuanto haya uno)
     getAuthUserTypeListener() {
       return this.authUserTypeListener.asObservable();
     }
-
+// método que crea un nuevo usuario tipo alumno
     createUserAlumno(
       nombres: string,
       apePaterno: string,
@@ -68,12 +76,13 @@ export class AuthService {
       postData.append('email', email);
       postData.append('password', password);
       console.log(postData);
+      // petición post a servidor, con el objeto Postdata, ue contiene las variables ya antes apendizadas
       this.http.post<{ message: string }>('http://localhost:3001/api/user/signUp', postData)
       .subscribe(response => {
        console.log(response.message);
       });
     }
-
+// método que autentica a un usario tipo alumno
     loginAlumno(matricula: string, password: string) {
       const authDataAlumno: LogInAlumno = { matricula: matricula, password: password };
       this.http
@@ -109,7 +118,7 @@ export class AuthService {
           }
         );
     }
-
+// método que crea un nuevo usuario tipo vigilante
     createUserVigilante(
       nombres: string,
       apePaterno: string,
@@ -136,13 +145,16 @@ export class AuthService {
       postData.append('email', email);
       postData.append('password', password);
       console.log(postData);
-      this.http.post<{ message: string }>('http://localhost:3001/api/user/signUp', postData)
+        // petición post a servidor, con el objeto Postdata, que contiene las variables ya antes apendizadas
+        // VER EN CARPETA BACKEND PARA CONTINUAR CON EL ENVIO DE INFORMACIÓN
+        // HACIA LA BASE DE DATOS
+        this.http.post<{ message: string }>('http://localhost:3001/api/user/signUp', postData)
       .subscribe(response => {
        console.log(response.message);
       });
 
     }
-
+  // método que autentica a un usuario de tipo vigilante
     loginVigilante(clave: string, password: string, acceso: string) {
       const authData: AuthData = { clave: clave, password: password, acceso: acceso };
       this.http
@@ -177,7 +189,11 @@ export class AuthService {
           }
         );
     }
-
+/*
+* este método es llamado en el archivo app.component.ts
+* y sirve para comprobar si hay un token ya hecho de algún usuario(hay una sesión abierta)
+* o el token está expirado
+*/
     autoAuthUser() {
       const authInformation = this.getAuthData();
       if (!authInformation) {
@@ -195,7 +211,9 @@ export class AuthService {
         this.authUserTypeListener.next(this.userType);
       }
     }
-
+/*
+* Método simple para cerrar sesión dde cualquier tipo de usuario
+*/
     logout() {
       this.token = null;
       this.isAuthenticated = false;
@@ -206,28 +224,36 @@ export class AuthService {
       this.clearAuthData();
       this.router.navigate(['/']);
     }
-
+/*
+* Método para determinar el tiempo que resta de sesión al token
+*/
     private setAuthTimer(duration: number) {
       console.log('Setting timer: ' + duration);
       this.tokenTimer = setTimeout(() => {
         this.logout();
       }, duration * 1000);
     }
-
+/*
+* Método para escribir datos de sesión de un usuario con localstorage
+*/
     private saveAuthData(token: string, expirationDate: Date, userId: string, userType: string) {
       localStorage.setItem('token', token);
       localStorage.setItem('expiration', expirationDate.toISOString());
       localStorage.setItem('userId', userId);
       localStorage.setItem('userType', userType);
     }
-
+/*
+* Método para eliminar datos de sesión de un usuario con localstorage
+*/
     private clearAuthData() {
       localStorage.removeItem('token');
       localStorage.removeItem('expiration');
       localStorage.removeItem('userId');
       localStorage.removeItem('userType');
     }
-
+/*
+* Método para obtener datos de sesión de un usuario con localstorage
+*/
     private getAuthData() {
       const token = localStorage.getItem('token');
       const expirationDate = localStorage.getItem('expiration');

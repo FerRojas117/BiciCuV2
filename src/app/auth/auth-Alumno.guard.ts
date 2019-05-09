@@ -3,7 +3,10 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, Router } from '@angular/router';
 import { AuthService } from './auth.service';
 import { Observable } from 'rxjs';
-
+/*
+* Este archivo implementa la clase CanActivate, que puede proteger rutas del front-end
+* (ejemplo en app.routing.ts)
+*/
 @Injectable({providedIn: 'root'})
 export class AuthAlumnoGuard implements CanActivate {
   constructor( private authService: AuthService, private router: Router) { }
