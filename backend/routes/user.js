@@ -13,7 +13,7 @@ const router = express.Router();
 // con lavariable router apendizamos todos los métodos específicos que existan en el controlador
 // de usuarios.
 router.post("/signUp", extractFile, userController.createUser);
-router.post("/loginVigilante", extractFile, userController.userLoginVigilante);
-router.post("/loginAlumno", extractFile, userController.userLoginAlumno);
+router.post("/loginVigilante", userController.userLoginVigilante);
+router.post("/loginAlumno", userController.userLoginAlumno);
 
 module.exports = router;
