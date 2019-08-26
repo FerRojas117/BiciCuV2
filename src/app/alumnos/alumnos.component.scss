@@ -1,0 +1,69 @@
+.inicio-background{
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    font-family: 'Source Sans Pro', sans-serif;
+    width: 100%;
+    height: 100%;
+    color: #003B5C;
+    text-align: center;
+    font-size: 100%;
+  }
+  
+ .head{
+  background-color:#003B5C;
+  font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+    text-align: center;
+ }
+ input[type=text] {
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid#003B5C;
+
+}
+select {
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid#003B5C;
+
+}
+input[type=password] {
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid#003B5C;
+
+}
+.buttone {
+  background-color: #003B5C;
+  border: none;
+  color: white;
+  padding: 45px 45px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  margin: 4px 2px;
+  font-size: 1.125rem;
+  font-family: inherit;
+}
+
+
+.bar {
+  overflow: hidden;
+  background-color: #003B5C;
+  font-family: 'Source Sans Pro', sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+h3{
+  color: white;
+    text-align: center;
+
+}
