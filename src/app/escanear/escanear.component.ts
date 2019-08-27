@@ -8,12 +8,17 @@ import { BarcodeFormat } from '@zxing/library';
 })
 export class EscanearComponent implements OnInit{
   public QRCode: string = null;
-
+  qrResultString: string;
   constructor () {
     
   }
     ngOnInit() {
      
+    }
+
+    onCodeResult(resultString: string) {
+      this.qrResultString = resultString;
+      console.log(this.qrResultString);
     }
   }
   
