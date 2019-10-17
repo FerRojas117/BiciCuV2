@@ -36,6 +36,8 @@ import { CommonModule } from '@angular/common';
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { EscanearComponent } from './escanear/escanear.component';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,6 +76,7 @@ GeneraQRComponent
     //NgQRCodeReaderModule,
     CommonModule,
     ZXingScannerModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
