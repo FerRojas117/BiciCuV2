@@ -24,7 +24,13 @@ import { RegistroEx2Component } from './registro-extemporaneo2/registro-extempor
 import { RegistroTemporalComponent } from './registrotemporal/registrotemporal.component';
 import { RegistroTemporal2Component } from './registrotemporal2/registrotemporal2.component';
 import { MenuComponent } from './menu/menu.component';
+import { errorComponent } from './error/error.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { from } from 'rxjs';
+<<<<<<< HEAD
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './auth/auth-interceptor';
+=======
 import { GeneraQRComponent } from './generaQR/generaQR.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -36,6 +42,7 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { CommonModule } from '@angular/common';
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+>>>>>>> 7dbe08e16f29a155ceb70456f15fc7300a080d06
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,11 +72,24 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
     RegistroVigComponent,
     RegistroTemporalComponent,
     RegistroTemporal2Component,
+<<<<<<< HEAD
+    errorComponent
+=======
 GeneraQRComponent
+>>>>>>> 7dbe08e16f29a155ceb70456f15fc7300a080d06
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+<<<<<<< HEAD
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
+  ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+
+=======
     BrowserAnimationsModule,
     QRCodeModule,
     ZXingScannerModule,
@@ -77,9 +97,12 @@ GeneraQRComponent
     CommonModule,
     ZXingScannerModule,
     ZXingScannerModule.forRoot()
+>>>>>>> 7dbe08e16f29a155ceb70456f15fc7300a080d06
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+<<<<<<< HEAD
+=======
 platformBrowserDynamic().bootstrapModule(AppModule);
+>>>>>>> 7dbe08e16f29a155ceb70456f15fc7300a080d06

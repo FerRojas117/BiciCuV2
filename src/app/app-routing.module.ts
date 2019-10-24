@@ -23,8 +23,13 @@ import { RegistroEx1Component } from './registro-extemporaneo1/registro-extempor
 import { RegistroEx2Component } from './registro-extemporaneo2/registro-extemporaneo2.component';
 import { RegistroTemporalComponent } from './registrotemporal/registrotemporal.component';
 import { RegistroTemporal2Component } from './registrotemporal2/registrotemporal2.component';
+<<<<<<< HEAD
+import { errorComponent } from './error/error.component';
+import { AuthAlumnoGuard } from './auth/auth-Alumno.guard';
+=======
 import { GeneraQRComponent } from './generaQR/generaQR.component';
 
+>>>>>>> 7dbe08e16f29a155ceb70456f15fc7300a080d06
 
 const routes: Routes = [
   {path: '', component: InicioComponent},
@@ -41,19 +46,23 @@ const routes: Routes = [
   {path: 'alumnos', component: AlumnosComponent},
   {path: 'inicioVig', component: InicioVigilantesComponent},
   {path: 'menu', component: MenuComponent},
-  {path: 'menuA', component: MenuAlumnoComponent},
+  {path: 'menuA', component: MenuAlumnoComponent, canActivate: [AuthAlumnoGuard]},
   {path: 'menuVig2', component: MenuVigilantes2Component},
   {path: 'menuVig1', component: MenuVigilantesComponent},
   {path: 'regE1', component: RegistroEx1Component},
   {path: 'regE2', component: RegistroEx2Component},
   {path: 'regTemp1', component: RegistroTemporalComponent},
   {path: 'regTemp2', component: RegistroTemporal2Component},
+<<<<<<< HEAD
+  {path: 'error', component: errorComponent},
+=======
   {path: 'genQR', component: GeneraQRComponent},
 
+>>>>>>> 7dbe08e16f29a155ceb70456f15fc7300a080d06
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
+  providers: [AuthAlumnoGuard]
 })
 export class AppRoutingModule { }
