@@ -27,8 +27,22 @@ import { MenuComponent } from './menu/menu.component';
 import { errorComponent } from './error/error.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { from } from 'rxjs';
+<<<<<<< HEAD
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth/auth-interceptor';
+=======
+import { GeneraQRComponent } from './generaQR/generaQR.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//import { HammerCardComponent } from './HammerQRcode/hammer.component';
+import { QRCodeModule } from 'angularx-qrcode';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
+//import { ScanQRComponent } from './ScanQR/scanqr.component';
+//import { NgQRCodeReaderModule } from 'ng2-qrcode-reader';
+import { CommonModule } from '@angular/common';
+import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+>>>>>>> 7dbe08e16f29a155ceb70456f15fc7300a080d06
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,6 +62,9 @@ import { AuthInterceptor } from './auth/auth-interceptor';
     InicioVigilantesComponent,
     MenuComponent,
     MenuAlumnoComponent,
+
+
+        
     MenuVigilantes2Component,
     MenuVigilantesComponent,
     RegistroEx1Component,
@@ -55,11 +72,16 @@ import { AuthInterceptor } from './auth/auth-interceptor';
     RegistroVigComponent,
     RegistroTemporalComponent,
     RegistroTemporal2Component,
+<<<<<<< HEAD
     errorComponent
+=======
+GeneraQRComponent
+>>>>>>> 7dbe08e16f29a155ceb70456f15fc7300a080d06
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+<<<<<<< HEAD
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
@@ -67,7 +89,20 @@ import { AuthInterceptor } from './auth/auth-interceptor';
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
 
+=======
+    BrowserAnimationsModule,
+    QRCodeModule,
+    ZXingScannerModule,
+    //NgQRCodeReaderModule,
+    CommonModule,
+    ZXingScannerModule,
+    ZXingScannerModule.forRoot()
+>>>>>>> 7dbe08e16f29a155ceb70456f15fc7300a080d06
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+<<<<<<< HEAD
+=======
+platformBrowserDynamic().bootstrapModule(AppModule);
+>>>>>>> 7dbe08e16f29a155ceb70456f15fc7300a080d06
